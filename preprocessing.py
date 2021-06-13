@@ -32,6 +32,7 @@ def get_training_dataset(strategy, batch_size):
         dataset = dataset.repeat()
         dataset = dataset.batch(batch_size, drop_remainder=True)
         dataset = dataset.prefetch(-1)
+        print('Training dataset fetched')
     return dataset
 
 
@@ -41,4 +42,5 @@ def get_validation_dataset():
 
     dataset = dataset.batch(10000, drop_remainder=True)
     dataset = dataset.repeat()
+    print('Validation dataset fetched')
     return dataset
