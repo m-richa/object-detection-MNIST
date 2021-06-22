@@ -108,8 +108,8 @@ def display_digits_with_boxes(digits, predictions, labels, pred_bboxes, bboxes, 
             ax.text(0.2, -0.3, "iou: %s" % (n_iou[i][0]), color=color, transform=ax.transAxes)
 
 
-'''# utility to display training and validation curves
-def plot_metrics(metric_name, title, ylim=5, plt):
+# utility to display training and validation curves
+'''def plot_metrics(ylim=5, metric_name, title, plt, history):
   plt.title(title)
   plt.ylim(0,ylim)
   plt.plot(history.history[metric_name],color='blue',label=metric_name)
